@@ -1,6 +1,5 @@
 'use strict';
 
-var isArray = require('@fav/type.is-array');
 var ArithNumber = require('@fav/arith.number');
 var add = require('@fav/arith.add');
 var subtract = require('@fav/arith.subtract');
@@ -12,7 +11,7 @@ function arithmetic(expression) {
     return expression;
   }
 
-  if (!isArray(expression)) {
+  if (!isArrayLike(expression)) {
     return ArithNumber.of(expression);
   }
 
@@ -75,4 +74,10 @@ function arithmetic(expression) {
   return answer;
 }
 
-module.exports = arithmetic;
+function isArrayLike(v) {
+  return (typeof v === 'object') && ('length' in v);
+}
+
+module.exports = function() {
+  return arithmetic(Array.prototype.slice.call(arguments));
+};

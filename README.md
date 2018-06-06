@@ -30,6 +30,11 @@ var a0 = arithmetic(1.23);
 a0.toApproximateString();
 // => '1.23'
 
+var a1 = arithmetic(1.23, '+', 4.56, '*', 7.89);
+// => ArithNumber { numerator: 372084, denominator: 1, exponent: -4 }
+a1.toApproximateString();
+// => '37.2084'
+
 var a1 = arithmetic([1.23, '+', 4.56, '*', 7.89]);
 // => ArithNumber { numerator: 372084, denominator: 1, exponent: -4 }
 a1.toApproximateString();
@@ -55,20 +60,10 @@ For Web browsers:
 <script>
 var arithmetic = fav.arith;
 
-var a0 = arithmetic(1.23);
-// => ArithNumber { numerator: 123, denominator: 1, exponent: -2 }
-a0.toApproximateString();
-// => '1.23'
-
-var a1 = arithmetic([1.23, '+', 4.56, '*', 7.89]);
+var a1 = arithmetic(1.23, '+', 4.56, '*', 7.89);
 // => ArithNumber { numerator: 372084, denominator: 1, exponent: -4 }
 a1.toApproximateString();
 // => '37.2084'
-
-var a2 = arithmetic([[1.23, '+', 4.56], '*', 7.89]);
-// => ArithNumber { numerator: 456831, denominator: 1, exponent: -4 }
-a2.toApproximateString();
-// => '45.6831'
 
 var a = arithmetic('1')   // => ArithNumber { numerator: 1, denominator: 1, exponent: 0 }
   .add(2)                 // => ArithNumber { numerator: 3, denominator: 1, exponent: 0 }
@@ -81,15 +76,13 @@ var a = arithmetic('1')   // => ArithNumber { numerator: 1, denominator: 1, expo
 
 ## API
 
-### <u>arithmetic(expression) : ArithNumber</u>
+### <u>arithmetic(expression, ...) : ArithNumber</u>
 
-Calculate an arithmetic expression.
-
-When the parameter *expression* is not an array, it is operated as a number value.
-When it is an array, it is operated as an arithmetic expression which consists of terms, operators and nested arrays.
+Calculate an *expression*, which is an Array parameter or a set of parameters.
+An *expression* consists of terms, operators and nested arrays.
 A term can be a number, a string or an ArithNumber object. An operator is a string which is one of `'+'`, `'-'`, `'*'`, `'/'`.
 
-An [ArithNumber][arith-number-url] object represents a number value as accurately as possible by using three integers: numerator, denominator and exponent; a number = (numerator /  denominator) * 10^exponent .
+[ArithNumber][arith-number-url] is for representing a number value as accurately as possible by using three integers: numerator, denominator and exponent; a number = (numerator /  denominator) * 10^exponent .
 
 #### Parameters:
 

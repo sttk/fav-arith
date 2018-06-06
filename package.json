@@ -60,7 +60,6 @@
     "@fav/arith.multiply": "^0.1.0",
     "@fav/arith.number": "^0.1.4",
     "@fav/arith.reduce": "^0.1.1",
-    "@fav/arith.subtract": "^0.1.1",
-    "@fav/type.is-array": "^1.0.2"
+    "@fav/arith.subtract": "^0.1.1"
   }
 }

@@ -286,4 +286,14 @@ describe('fav.arith', function() {
       expect(a.toApproximateString()).to.equal('3.075');
     });
   });
+
+  describe('Expression by multiple parameters', function() {
+    it('should calculate', function() {
+      var a = arithmetic(123, '/', 3, '-', '50');
+      expect(a.numerator).to.equal(-27);
+      expect(a.denominator).to.equal(3);
+      expect(a.exponent).to.equal(0);
+      expect(a.toApproximateString()).to.equal('-9');
+    });
+  });
 });
