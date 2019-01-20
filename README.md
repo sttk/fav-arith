@@ -107,7 +107,15 @@ An ArithNumber object which represents an number value.
 
 ## Checked
 
-### Node.js (4〜)
+### Node.js (11〜)
+
+| Platform  |   11   |
+|:---------:|:------:|
+| macOS     |&#x25ef;|
+| Windows10 |&#x25ef;|
+| Linux     |&#x25ef;|
+
+### Node.js (4〜10)
 
 | Platform  |   4    |   5    |   6    |   7    |   8    |   9    |   10   |
 |:---------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
@@ -149,7 +157,7 @@ See the file LICENSE in this distribution for more details.
 
 
 [repo-url]: https://github.com/sttk/fav-arith/
-[npm-img]: https://img.shields.io/badge/npm-v0.1.0-blue.svg
+[npm-img]: https://img.shields.io/badge/npm-v0.1.1-blue.svg
 [npm-url]: https://www.npmjs.com/package/@fav/arith
 [mit-img]: https://img.shields.io/badge/license-MIT-green.svg
 [mit-url]: https://opensource.org/licenses/MIT
